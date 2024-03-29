@@ -11,15 +11,16 @@ while True:
 
 		print(
 			'Your new Secret Key:\n'
-			f'{key.decode("utf-8")}\n')
+			f'{key.decode("utf-8")}'
+		)
 		break
 
 	elif user_input in ('no', 'n'):
-		print()
 		break
 
 	else:
 		print(f'"{user_input}" is not a valid input.\n')
+print()
 
 msg = input('Enter the text you want to encrypt: ').encode('utf-8')
 print()
@@ -33,8 +34,8 @@ while True:
 		print(e)
 		print()
 	else:
-		print()
 		break
+print()
 
 filename = input('Enter filename: ')
 file_path = path.join(path.dirname(__file__), filename)
@@ -42,7 +43,7 @@ print()
 
 token = f.encrypt(msg)
 
-with open(filename, 'wb') as new_file:
+with open(file_path, 'wb') as new_file:
 	new_file.write(token)
 
 print(f'Encryption complete, Fernet Token saved to "{file_path}"')

@@ -11,8 +11,8 @@ while True:
 		print(e)
 		print()
 	else:
-		print()
 		break
+print()
 
 while True:
 	user_input = input('Is the Fernet Token in a file? (y/n)').lower()
@@ -23,20 +23,18 @@ while True:
 		try:
 			with open(file, 'rb') as f1:
 				token = f1.read()
-		except FileNotFoundError as e:
+		except Exception as e:
 			print(e)
 			print()
 			continue
-		else:
-			print()
 
 	elif user_input in ('no', 'n'):
 		token = input('Enter Fernet Token: ').encode('utf-8')
-		print()
 
 	else:
 		print(f'"{user_input}" is not a valid input.\n')
 		continue
+	print()
 
 	try:
 		plaintext = f.decrypt(token).decode('utf-8')
