@@ -1,4 +1,3 @@
-from os import path
 from cryptography.fernet import Fernet, InvalidToken
 # -------------------------------------------------------------------------------------------------
 
