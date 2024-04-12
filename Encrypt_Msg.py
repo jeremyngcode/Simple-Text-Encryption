@@ -34,14 +34,13 @@ while True:
 		print(e)
 		print()
 	else:
+		token = f.encrypt(msg)
 		break
 print()
 
 filename = input('Enter filename: ')
 file_path = path.join(path.dirname(__file__), filename)
 print()
-
-token = f.encrypt(msg)
 
 with open(file_path, 'wb') as new_file:
 	new_file.write(token)
